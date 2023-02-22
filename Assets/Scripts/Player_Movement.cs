@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 // Credit to BMo on youtube for the Unity Input System Tutorial
 // "How to use Unity's New INPUT System EASILY" by BMo
@@ -10,7 +11,7 @@ using UnityEngine.InputSystem;
 
 public class Player_Movement : MonoBehaviour
 {
-
+    public string loadScene;
     public Rigidbody2D rb;
     public float moveSpeed = 5f;
     public PlayerInputAction pMovement;
@@ -40,6 +41,14 @@ public class Player_Movement : MonoBehaviour
         move.Disable();
         fire.Disable();
         //pMovement.Disable();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            SceneManager.LoadScene(loadScene);
+        }
     }
 
     // Start is called before the first frame update
