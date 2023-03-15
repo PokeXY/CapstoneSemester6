@@ -22,10 +22,13 @@ public class EnemyCharacter : MonoBehaviour
 
     public float speed;
     public bool isAttacking;
-    public Animator animator;
 
     private float distance;
     private NavMeshAgent agent;
+
+    public float Hitpoints;
+    public float MaxHitpoints = 5;
+    public HealthBarBehaviour Healthbar;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,8 @@ public class EnemyCharacter : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         isAttacking = false;
+        Hitpoints = MaxHitpoints;
+        Healthbar.SetHealth(Hitpoints, MaxHitpoints);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -46,7 +51,18 @@ public class EnemyCharacter : MonoBehaviour
         }
     }
 
-        // Update is called once per frame
+    public void TakeHit(float damage)
+    {
+        Hitpoints -= damage;
+        Healthbar.SetHealth(Hitpoints, MaxHitpoints);
+
+        if (Hitpoints <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Update is called once per frame
     void Update()
     {
 
@@ -78,7 +94,6 @@ public class EnemyCharacter : MonoBehaviour
             //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position,
             //speed * Time.deltaTime);
             agent.SetDestination(player.position);
-            animator.SetFloat("Speed", 1);
         }
     }
 }
