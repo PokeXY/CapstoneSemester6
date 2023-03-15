@@ -14,11 +14,14 @@ public class Player_Movement : MonoBehaviour
     public string loadScene;
     public Rigidbody2D rb;
     public float moveSpeed = 5f;
+    public Camera cam;
     public PlayerInputAction pMovement;
+
 
     private InputAction move;
     private InputAction fire;
     Vector2 moveDirection = Vector2.zero;
+    Vector2 mousePos;
 
     private void Awake()
     {
@@ -29,17 +32,12 @@ public class Player_Movement : MonoBehaviour
     {
         move = pMovement.Player.Move;
         move.Enable();
-
-        fire = pMovement.Player.Fire;
-        fire.Enable();
-        fire.performed += Fire;
         //pMovement.Enable();
     }
 
     private void OnDisable()
     {
         move.Disable();
-        fire.Disable();
         //pMovement.Disable();
     }
 
@@ -47,24 +45,30 @@ public class Player_Movement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "SceneChange")
+        {
             SceneManager.LoadScene(loadScene);
         }
     }
+
 
     // Start is called before the first frame update
     void Update()
     {
         moveDirection = move.ReadValue<Vector2>();
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
     }
 
-    private void Fire(InputAction.CallbackContext context)
-    {
-        Debug.Log("We fired!");
-    }
 }
