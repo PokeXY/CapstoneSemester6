@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 // Credit to BMo on youtube for the Unity Input System Tutorial
 // "How to use Unity's New INPUT System EASILY" by BMo
@@ -16,6 +17,7 @@ public class Player_Movement : MonoBehaviour
     public float moveSpeed = 5f;
     public Camera cam;
     public PlayerInputAction pMovement;
+    private AudioSource sfx;
 
 
     private InputAction move;
@@ -26,6 +28,7 @@ public class Player_Movement : MonoBehaviour
     private void Awake()
     {
         pMovement = new PlayerInputAction();
+        sfx = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -59,6 +62,7 @@ public class Player_Movement : MonoBehaviour
     void Update()
     {
         moveDirection = move.ReadValue<Vector2>();
+
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
@@ -69,6 +73,10 @@ public class Player_Movement : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
+        if (rb.velocity != Vector2.zero)
+        {
+            sfx.Play();
+        }
     }
 
 }
