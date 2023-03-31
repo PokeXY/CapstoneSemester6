@@ -73,7 +73,8 @@ public class Player_Movement : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
-        if (rb.velocity != Vector2.zero)
+
+        if (rb.velocity == Vector2.zero)
         {
             sfx.Play();
         }

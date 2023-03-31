@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5794264619230291756}
   - component: {fileID: 5794264619230291757}
   - component: {fileID: 5794264619230291754}
-  - component: {fileID: 5794264619230291755}
   - component: {fileID: 1321009061801604121}
   - component: {fileID: 2241713009536762451}
+  - component: {fileID: 348989136110141998}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -318,22 +318,6 @@ MonoBehaviour:
   rb: {fileID: 5794264619230291923}
   moveSpeed: 9
   cam: {fileID: 0}
---- !u!58 &5794264619230291755
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5794264619230291922}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &1321009061801604121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,3 +430,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &348989136110141998
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794264619230291922}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.45
