@@ -19,6 +19,13 @@ public class Player_Movement : MonoBehaviour
     public PlayerInputAction pMovement;
     private AudioSource sfx;
 
+    
+    private float boostTimer;
+    private bool boosting;
+
+    //public float sizeUp = 1.4f;
+    //private float sizeTimer;
+    //private bool big;
 
     private InputAction move;
     private InputAction fire;
@@ -29,6 +36,14 @@ public class Player_Movement : MonoBehaviour
     {
         pMovement = new PlayerInputAction();
         sfx = GetComponent<AudioSource>();
+
+        moveSpeed = 5;
+        boostTimer = 0;
+        boosting = false;
+
+
+        //sizeTimer = 0;
+        //big = false;
     }
 
     private void OnEnable()
@@ -64,6 +79,28 @@ public class Player_Movement : MonoBehaviour
         moveDirection = move.ReadValue<Vector2>();
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        if(boosting)
+        {
+            boostTimer += Time.deltaTime;
+            if(boostTimer >= 3)
+            {
+                moveSpeed = 5;
+                boostTimer = 0;
+                boosting = false;
+            }
+        }
+
+        //if(big)
+        //{
+        //    sizeTimer += Time.deltaTime;
+        //    if(sizeTimer >= 3)
+        //    {
+        //        player.transform.localScale;
+        //        sizeTimer = 0;
+        //        big = false;
+        //    }
+        //}
     }
 
     // Update is called once per frame
@@ -79,4 +116,24 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "SpeedBoost")
+        {
+            boosting = true;
+            moveSpeed = 10;
+            Destroy(other.gameObject);
+        }
+
+        //if(other.tag == "SizeChange")
+        //{
+        //    big = true;
+        //    other.transform.localScale *= sizeUp;
+        //    Destroy(other.gameObject);
+
+        //}
+    }
+
 }
+
+    
