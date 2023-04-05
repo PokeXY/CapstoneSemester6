@@ -9,7 +9,10 @@ public class PlayerShoot : MonoBehaviour
     public GameObject projectilePrefab;
     public float fireRate = 0.25f;
     private float nextFire = 0.0f;
-
+    public Camera cam;
+    Vector2 mousePos;
+    Vector2 myPos;
+    Vector2 direction;
     public float projectileForce = 20f;
 
     private void Start()
@@ -19,6 +22,9 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        myPos = transform.position;
+        direction = (mousePos - myPos).normalized;
         if (Input.GetButtonDown("Fire1"))
         {
 
@@ -36,7 +42,7 @@ public class PlayerShoot : MonoBehaviour
             nextFire = Time.time + fireRate;
             GameObject clone = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();
-            rb.AddRelativeForce(Vector2.up * projectileForce, ForceMode2D.Impulse);
+            rb.AddRelativeForce(direction * projectileForce, ForceMode2D.Impulse);
         }
 
     }

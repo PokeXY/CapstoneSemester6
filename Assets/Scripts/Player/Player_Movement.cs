@@ -19,8 +19,14 @@ public class Player_Movement : MonoBehaviour
     public PlayerInputAction pMovement;
     private AudioSource sfx;
 
+    private float boostTimer;
+    private bool boosting;
+    private float dashTimer;
+    private bool isDashing;
+    private float dashCooldown;
 
     private InputAction move;
+    private InputAction dash;
     private InputAction fire;
     Vector2 moveDirection = Vector2.zero;
     Vector2 mousePos;
@@ -29,10 +35,23 @@ public class Player_Movement : MonoBehaviour
     {
         pMovement = new PlayerInputAction();
         sfx = GetComponent<AudioSource>();
+
+        moveSpeed = 9;
+        dashTimer = 0;
+        isDashing = false;
+
+        boostTimer = 0;
+        boosting = false;
+
+        //sizeTimer = 0;
+        //big = false;
     }
 
     private void OnEnable()
     {
+        dash = pMovement.Player.Dash;
+        dash.Enable();
+        dash.performed += Dash;
         move = pMovement.Player.Move;
         move.Enable();
         //pMovement.Enable();
@@ -40,6 +59,7 @@ public class Player_Movement : MonoBehaviour
 
     private void OnDisable()
     {
+        dash.Disable();
         move.Disable();
         //pMovement.Disable();
     }
@@ -57,27 +77,84 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "SpeedBoost")
+        {
+            boosting = true;
+            moveSpeed = 15;
+            Destroy(other.gameObject);
+        }
+
+        //if(other.tag == "SizeChange")
+        //{
+        //    big = true;
+        //    other.transform.localScale *= sizeUp;
+        //    Destroy(other.gameObject);
+
+        //}
+    }
+
 
     // Start is called before the first frame update
     void Update()
     {
         moveDirection = move.ReadValue<Vector2>();
-
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+
+        if (boosting)
+        {
+            boostTimer += Time.deltaTime;
+            if (boostTimer >= 3)
+            {
+                moveSpeed = 9;
+                boostTimer = 0;
+                boosting = false;
+            }
+        }
+
+        if (isDashing)
+        {
+            dashTimer += Time.deltaTime;
+            if (dashTimer >= 0.2)
+            {
+                moveSpeed = 9;
+                dashTimer = 0;
+                isDashing = false;
+            }
+        }
+
+        //if(big)
+        //{
+        //    sizeTimer += Time.deltaTime;
+        //    if(sizeTimer >= 3)
+        //    {
+        //        player.transform.localScale;
+        //        sizeTimer = 0;
+        //        big = false;
+        //    }
+        //}
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        //Vector2 lookDir = mousePos - rb.position;
+        //float angle = Mathf.Atan2(lo  okDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        //rb.rotation = angle;
 
         if (rb.velocity == Vector2.zero)
         {
             sfx.Play();
         }
+    }
+
+    private void Dash(InputAction.CallbackContext context)
+    {
+        isDashing = true;
+        moveSpeed = 35;
     }
 
 }
