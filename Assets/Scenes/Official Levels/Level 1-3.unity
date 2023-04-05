@@ -130,18 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2241713009536762451, guid: a33a16540ac7cdb48aaf0fad45f7ef17, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5794264619230291754, guid: a33a16540ac7cdb48aaf0fad45f7ef17, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 885441301}
-    - target: {fileID: 5794264619230291754, guid: a33a16540ac7cdb48aaf0fad45f7ef17, type: 3}
-      propertyPath: loadScene
-      value: Level 1-1
-      objectReference: {fileID: 0}
     - target: {fileID: 5794264619230291921, guid: a33a16540ac7cdb48aaf0fad45f7ef17, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -10085,6 +10077,10 @@ PrefabInstance:
     - target: {fileID: 2324438318099547138, guid: 3758f66b39c95bc4a845f8ec3fc57147, type: 3}
       propertyPath: m_Tiles.Array.data[401].second.m_TileObjectToInstantiateIndex
       value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 3513659802197104549, guid: 3758f66b39c95bc4a845f8ec3fc57147, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5513231531130355571, guid: 3758f66b39c95bc4a845f8ec3fc57147, type: 3}
       propertyPath: m_Size.x
