@@ -5,6 +5,7 @@ public class PaulsEnemyBehaviourt : MonoBehaviour{
     public float Hitpoints;
     public float MaxHitpoints = 5;
     public HealthBarBehaviour Healthbar;
+    public AudioSource audioPlayer;
 
     // Start is called before the first frame update
     void Start(){
@@ -18,6 +19,7 @@ public class PaulsEnemyBehaviourt : MonoBehaviour{
         Healthbar.SetHealth(Hitpoints, MaxHitpoints);
 
         if (Hitpoints <= 0){
+            audioPlayer.Play();
             Destroy(gameObject);
         }
     }

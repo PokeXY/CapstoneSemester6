@@ -14,8 +14,10 @@ public class PaulsControllerCharactcer : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
+    public AudioSource audioPlayer;
+
     // Start is called before the first frame update
-   private void Start(){
+    private void Start(){
         _rigidbody = GetComponent<Rigidbody2D>();
         Hitpoints = MaxHitpoints;
         Healthbar.SetHealth(Hitpoints, MaxHitpoints);
@@ -44,6 +46,7 @@ public class PaulsControllerCharactcer : MonoBehaviour
         }
 
         if (Input.GetButtonDown("Fire1")){
+            audioPlayer.Play();
             Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
         }
 
