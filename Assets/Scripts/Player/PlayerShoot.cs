@@ -14,6 +14,7 @@ public class PlayerShoot : MonoBehaviour
     Vector2 myPos;
     Vector2 direction;
     public float projectileForce = 20f;
+    public AudioSource audioPlayer;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
         direction = (mousePos - myPos).normalized;
         if (Input.GetButtonDown("Fire1"))
         {
-
+            audioPlayer.Play();
             Shoot();
             //projectile.Play();
         }
