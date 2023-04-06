@@ -10,7 +10,7 @@ public class ProjectileBehaviour : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
-        var enemy = collision.collider.GetComponent<PaulsEnemyBehaviourt>();
+        var enemy = collision.collider.GetComponent<EnemyCharacter>();
         if (enemy){
             enemy.TakeHit(1);
         }

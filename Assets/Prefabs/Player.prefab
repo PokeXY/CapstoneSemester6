@@ -337,7 +337,9 @@ MonoBehaviour:
   firePoint: {fileID: 5794264619230291921}
   projectilePrefab: {fileID: 2174762654654927701, guid: 8d6d7d3f873e6c24e848e07a5282979c, type: 3}
   fireRate: 0.5
+  cam: {fileID: 0}
   projectileForce: 20
+  audioPlayer: {fileID: 5869236887964227801, guid: a78a22e15c266154ca31c2b457dacd34, type: 3}
 --- !u!82 &2241713009536762451
 AudioSource:
   m_ObjectHideFlags: 0
