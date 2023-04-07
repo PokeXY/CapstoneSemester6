@@ -417,6 +417,7 @@ MonoBehaviour:
   loadScene: 
   rb: {fileID: 326182014}
   moveSpeed: 5
+  cam: {fileID: 1235972728}
 --- !u!1001 &718532390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -479,6 +480,10 @@ PrefabInstance:
     - target: {fileID: 59064663107771867, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 885745364447732612, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
@@ -1495,6 +1500,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 885745364447732612, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
 --- !u!1001 &1895339229986793441
@@ -1561,6 +1570,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6718630211141064611, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5303029059025117292, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1613,5 +1626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedEnemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6460233689586641046, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}

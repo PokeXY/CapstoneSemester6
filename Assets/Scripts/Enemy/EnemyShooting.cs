@@ -7,7 +7,7 @@ public class EnemyShooting : MonoBehaviour
 
     [SerializeField] Transform player;
 
-    public float speed;
+    //public float speed;
     public bool isInRange;
     //public Animator animator;
 
