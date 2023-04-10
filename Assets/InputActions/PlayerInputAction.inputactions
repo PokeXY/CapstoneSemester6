@@ -1,5 +1,5 @@
 {
-    "name": "CapstoneSemester6",
+    "name": "PlayerInputAction",
     "maps": [
         {
             "name": "Player",
@@ -27,6 +27,15 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "b39a49a3-51a0-4f7d-8891-3881f0a2e131",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "bf35ec24-266e-4554-93eb-6285730ce291",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -251,6 +260,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39b1f8fe-5248-4118-a001-6ac59fd0ad72",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

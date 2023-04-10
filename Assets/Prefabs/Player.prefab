@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5794264619230291756}
   - component: {fileID: 5794264619230291757}
   - component: {fileID: 5794264619230291754}
-  - component: {fileID: 5794264619230291755}
-  - component: {fileID: 1321009061801604121}
+  - component: {fileID: 3644616286162852297}
   - component: {fileID: 2241713009536762451}
+  - component: {fileID: 7748768644986566739}
+  - component: {fileID: 4420518557780283082}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 5794264619230291922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +60,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09cb40f9accf7e4449e1223abfe5825c, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,13 +80,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 59a8193009d534a49ab4c6d1c26a8cae, type: 3}
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 1479671589, guid: 4835b88e3cd593c419d7421768b66f6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -111,7 +112,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!96 &5794264619230291756
 TrailRenderer:
   serializedVersion: 2
@@ -233,7 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 4cf179fd4b03f164292d005a3aa222e1, type: 3}
-  m_NotificationBehavior: 1
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -297,6 +298,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 069e6b3e-62ef-4da8-baeb-ab86d3f7e042
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bf35ec24-266e-4554-93eb-6285730ce291
+    m_ActionName: Player/Dash[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -314,27 +319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251a8825c66397d4daf458b5d975a052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadScene: Level 1
+  loadScene: Level 1-1
   rb: {fileID: 5794264619230291923}
   moveSpeed: 9
   cam: {fileID: 0}
---- !u!58 &5794264619230291755
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5794264619230291922}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &1321009061801604121
+  playerAnimator: {fileID: 4420518557780283082}
+--- !u!114 &3644616286162852297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,8 +338,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 5794264619230291921}
   projectilePrefab: {fileID: 2174762654654927701, guid: 8d6d7d3f873e6c24e848e07a5282979c, type: 3}
-  fireRate: 0.25
+  fireRate: 0.5
+  cam: {fileID: 0}
   projectileForce: 20
+  audioPlayer: {fileID: 5869236887964227801, guid: a78a22e15c266154ca31c2b457dacd34, type: 3}
 --- !u!82 &2241713009536762451
 AudioSource:
   m_ObjectHideFlags: 0
@@ -361,7 +353,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 898ec46b039ef6a408fa06112aa42300, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
@@ -446,3 +438,49 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &7748768644986566739
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794264619230291922}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.45}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 1.28}
+    newSize: {x: 0.64, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.4}
+  m_EdgeRadius: 0
+--- !u!95 &4420518557780283082
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794264619230291922}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bd03bde86edcc345b94595e05dc7b94, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
