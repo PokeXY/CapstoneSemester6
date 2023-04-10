@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.Animations;
 
 // Credit to BMo on youtube for the Unity Input System Tutorial
 // "How to use Unity's New INPUT System EASILY" by BMo
@@ -18,6 +19,7 @@ public class Player_Movement : MonoBehaviour
     public Camera cam;
     public PlayerInputAction pMovement;
     private AudioSource sfx;
+    public Animator playerAnimator;
 
     private float boostTimer;
     private bool boosting;
@@ -35,6 +37,7 @@ public class Player_Movement : MonoBehaviour
     {
         pMovement = new PlayerInputAction();
         sfx = GetComponent<AudioSource>();
+        playerAnimator = GetComponent<Animator>();
 
         moveSpeed = 9;
         dashTimer = 0;
@@ -145,9 +148,12 @@ public class Player_Movement : MonoBehaviour
         //float angle = Mathf.Atan2(lo  okDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         //rb.rotation = angle;
 
-        if (rb.velocity == Vector2.zero)
+
+        if (rb.velocity != Vector2.zero)
         {
             sfx.Play();
+            playerAnimator.SetFloat("xAxis", moveDirection.x);
+            playerAnimator.SetFloat("yAxis", moveDirection.y);
         }
     }
 
