@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 59064663107771812}
   - component: {fileID: 59064663107771813}
   - component: {fileID: 5310300354693657632}
-  - component: {fileID: 519066218337471315}
+  - component: {fileID: 1000076964303295095}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 59064663107771814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5370401560785090520}
@@ -77,9 +77,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: dcd8a9ddf994610439013084ea28bddf, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!195 &59064663107771812
 NavMeshAgent:
@@ -130,7 +130,6 @@ MonoBehaviour:
   MaxHitpoints: 5
   Healthbar: {fileID: 4237663367327240283}
   audioPlayer: {fileID: 5733128701473664808, guid: f6310803269b6384dbc5d3a434475b67, type: 3}
-  enemydeath: {fileID: 8300000, guid: 9f32d69781271674d8acecd414d6b686, type: 3}
 --- !u!50 &5310300354693657632
 Rigidbody2D:
   serializedVersion: 4
@@ -151,9 +150,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &519066218337471315
-CircleCollider2D:
+  m_Constraints: 4
+--- !u!70 &1000076964303295095
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -166,8 +165,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.32, y: 0.64}
+  m_Direction: 0
 --- !u!1 &394188207779128294
 GameObject:
   m_ObjectHideFlags: 0
