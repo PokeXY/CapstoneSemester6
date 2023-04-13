@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 4420518557780283082}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,7 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251a8825c66397d4daf458b5d975a052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadScene: Level 1-1
   rb: {fileID: 5794264619230291923}
   moveSpeed: 9
   cam: {fileID: 0}
