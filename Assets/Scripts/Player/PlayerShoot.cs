@@ -28,7 +28,6 @@ public class PlayerShoot : MonoBehaviour
         direction = (mousePos - myPos).normalized;
         if (Input.GetButtonDown("Fire1"))
         {
-            audioPlayer.Play();
             Shoot();
             //projectile.Play();
         }
@@ -40,6 +39,7 @@ public class PlayerShoot : MonoBehaviour
         {
             if (!projectilePrefab)
                 return;
+            audioPlayer.Play();
             nextFire = Time.time + fireRate;
             GameObject clone = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = clone.GetComponent<Rigidbody2D>();

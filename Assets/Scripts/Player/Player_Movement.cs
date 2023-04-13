@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.Animations;
 
@@ -13,7 +12,6 @@ using UnityEngine.Animations;
 
 public class Player_Movement : MonoBehaviour
 {
-    public string loadScene;
     public Rigidbody2D rb;
     public float moveSpeed = 5f;
     public Camera cam;
@@ -72,11 +70,6 @@ public class Player_Movement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-        }
-
-        if (collision.gameObject.tag == "SceneChange")
-        {
-            SceneManager.LoadScene(loadScene);
         }
     }
 
