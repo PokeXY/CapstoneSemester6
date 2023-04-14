@@ -12,7 +12,7 @@ public class HealthBarBehaviour : MonoBehaviour{
 
     public void SetHealth(float health, float maxHealth){
         //The health bar should only be visible when the enemy is not at full health
-        Slider.gameObject.SetActive(health > maxHealth);
+        Slider.gameObject.SetActive(health < maxHealth);
         Slider.value = health;
         Slider.maxValue = maxHealth;
 

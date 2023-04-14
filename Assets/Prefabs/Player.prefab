@@ -323,6 +323,9 @@ MonoBehaviour:
   moveSpeed: 9
   cam: {fileID: 0}
   playerAnimator: {fileID: 4420518557780283082}
+  Hitpoints: 10
+  MaxHitpoints: 10
+  Healthbar: {fileID: 0}
 --- !u!114 &3644616286162852297
 MonoBehaviour:
   m_ObjectHideFlags: 0
