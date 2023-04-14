@@ -62,7 +62,6 @@ public class EnemyCharacter : MonoBehaviour
         {
             audioPlayer.Play();
             Destroy(gameObject);
-            
         }
     }
 

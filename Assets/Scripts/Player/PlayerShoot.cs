@@ -26,8 +26,8 @@ public class PlayerShoot : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         myPos = transform.position;
         direction = (mousePos - myPos).normalized;
-        if (Input.GetButtonDown("Fire1"))
-        {
+        if (Input.GetButtonDown("Fire1")){
+            audioPlayer.PlayDelayed(0.10f);
             audioPlayer.Play();
             Shoot();
             //projectile.Play();
