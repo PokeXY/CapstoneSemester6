@@ -19,6 +19,10 @@ public class Player_Movement : MonoBehaviour
     private AudioSource sfx;
     public Animator playerAnimator;
 
+    public float Hitpoints;
+    public float MaxHitpoints = 5;
+    public HealthBarBehaviour Healthbar;
+
     private float boostTimer;
     private bool boosting;
     private float dashTimer;
@@ -46,6 +50,21 @@ public class Player_Movement : MonoBehaviour
 
         //sizeTimer = 0;
         //big = false;
+    }
+    void Start()
+    {
+        Hitpoints = MaxHitpoints;
+        Healthbar.SetHealth(Hitpoints, MaxHitpoints);
+    }
+
+    public void TakeHit(float damage)
+    {
+        Hitpoints -= damage;
+
+        if (Hitpoints <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnEnable()

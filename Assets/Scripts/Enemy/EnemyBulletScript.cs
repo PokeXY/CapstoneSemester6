@@ -32,8 +32,15 @@ public class EnemyBulletScript : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Player")
         {
+
             Destroy(gameObject);
 
+        }
+
+        var player = collision.collider.GetComponent<Player_Movement>();
+        if (player)
+        {
+            player.TakeHit(1);
         }
     }
 }

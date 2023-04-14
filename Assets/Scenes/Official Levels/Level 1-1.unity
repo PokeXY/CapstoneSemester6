@@ -264,6 +264,34 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4237663367327240283, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
+      propertyPath: Low.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237663367327240283, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
+      propertyPath: Low.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237663367327240283, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
+      propertyPath: Low.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237663367327240283, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
+      propertyPath: High.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237663367327240283, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
+      propertyPath: High.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237663367327240283, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
+      propertyPath: High.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237663367327240283, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
+      propertyPath: High.r
+      value: 0.011764765
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62f5de9b67f48db4e852a41caf4e23d2, type: 3}
 --- !u!1 &245773040 stripped
@@ -430,6 +458,17 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 5733128701473664808, guid: f6310803269b6384dbc5d3a434475b67, type: 3}
   m_PrefabInstance: {fileID: 5733128700866925568}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &828871579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6344815502150105599, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+  m_PrefabInstance: {fileID: 1345416519}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d7e53b4b6230147b8e7c5224f7b119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &878905326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47367,6 +47406,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1911973215}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: Healthbar
+      value: 
+      objectReference: {fileID: 828871579}
     - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: audioPlayer
       value: 
