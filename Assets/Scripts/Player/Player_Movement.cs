@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.Animations;
 
 // Credit to BMo on youtube for the Unity Input System Tutorial
 // "How to use Unity's New INPUT System EASILY" by BMo
@@ -12,12 +12,12 @@ using UnityEngine.Audio;
 
 public class Player_Movement : MonoBehaviour
 {
-    public string loadScene;
     public Rigidbody2D rb;
     public float moveSpeed = 5f;
     public Camera cam;
     public PlayerInputAction pMovement;
     private AudioSource sfx;
+    public Animator playerAnimator;
 
     private float boostTimer;
     private bool boosting;
@@ -35,6 +35,7 @@ public class Player_Movement : MonoBehaviour
     {
         pMovement = new PlayerInputAction();
         sfx = GetComponent<AudioSource>();
+        playerAnimator = GetComponent<Animator>();
 
         moveSpeed = 9;
         dashTimer = 0;
@@ -69,11 +70,6 @@ public class Player_Movement : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-        }
-
-        if (collision.gameObject.tag == "SceneChange")
-        {
-            SceneManager.LoadScene(loadScene);
         }
     }
 
@@ -145,9 +141,12 @@ public class Player_Movement : MonoBehaviour
         //float angle = Mathf.Atan2(lo  okDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         //rb.rotation = angle;
 
-        if (rb.velocity == Vector2.zero)
+
+        if (rb.velocity != Vector2.zero)
         {
-            sfx.Play();
+            //sfx.Play();
+            playerAnimator.SetFloat("xAxis", moveDirection.x);
+            playerAnimator.SetFloat("yAxis", moveDirection.y);
         }
     }
 

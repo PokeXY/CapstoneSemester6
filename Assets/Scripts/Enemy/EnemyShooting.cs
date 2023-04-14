@@ -38,16 +38,16 @@ public class EnemyShooting : MonoBehaviour
         // NORMALIIIIIZE
         direction.Normalize();
         // Convert from Radian to degree
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        if (distance < 10)
-        {
-            isInRange = false;
+        //if (distance < 10)
+        //{
+        //    isInRange = false;
             
-            // Rotate our enemy toward the player!
+        //    // Rotate our enemy toward the player!
 
-            transform.rotation = Quaternion.Euler(Vector3.forward * angle);
-        }
+        //    transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        //}
         if (distance < 6)
         {
             isInRange = true;
