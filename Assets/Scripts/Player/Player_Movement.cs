@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Audio;
 using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 
 // Credit to BMo on youtube for the Unity Input System Tutorial
 // "How to use Unity's New INPUT System EASILY" by BMo
@@ -63,7 +64,7 @@ public class Player_Movement : MonoBehaviour
 
         if (Hitpoints <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
     }
 
@@ -88,7 +89,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
     }
 
