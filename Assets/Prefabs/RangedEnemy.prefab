@@ -181,6 +181,9 @@ MonoBehaviour:
   isInRange: 0
   bullet: {fileID: 2297181924630997871, guid: d4e4e0de5fe515f4dbc4dc3b47a7f166, type: 3}
   bulletPos: {fileID: 5303029059030865938}
+  Hitpoints: 5
+  MaxHitpoints: 5
+  Healthbar: {fileID: 6344815502150105599}
 --- !u!50 &4493665823616919493
 Rigidbody2D:
   serializedVersion: 4
@@ -201,7 +204,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &5190679546545412112
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

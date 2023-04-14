@@ -309,6 +309,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1132426685}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 5470925}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy (3)
@@ -50404,6 +50408,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1132426685}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 5470925}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy (1)
@@ -50599,6 +50607,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1132426685}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 5470925}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy
@@ -50664,6 +50676,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1132426685}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 5470925}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy (4)
@@ -50729,6 +50745,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1132426685}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 5470925}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy (2)

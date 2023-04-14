@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1513790017}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 202471014}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy (3)
@@ -386,6 +390,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1513790017}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 202471014}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy
@@ -789,6 +797,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1513790017}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 202471014}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy (4)
@@ -1862,6 +1874,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1513790017}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 202471014}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy (1)
@@ -2058,6 +2074,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1513790017}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 202471014}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy (5)
@@ -56161,6 +56181,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1513790017}
+    - target: {fileID: 5303029059025117293, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
+      propertyPath: audioPlayer
+      value: 
+      objectReference: {fileID: 202471014}
     - target: {fileID: 5303029059025117294, guid: fd7cada22ff00784c9172c145e60eeb5, type: 3}
       propertyPath: m_Name
       value: RangedEnemy (2)
