@@ -18,14 +18,21 @@ public class EnemyShooting : MonoBehaviour
     public Transform bulletPos;
 
     private float timer;
-    
 
+    public float Hitpoints;
+    public float MaxHitpoints = 5;
+    public HealthBarBehaviour Healthbar;
+
+    public AudioSource audioPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         
         isInRange = false;
+
+        Hitpoints = MaxHitpoints;
+        Healthbar.SetHealth(Hitpoints, MaxHitpoints);
     }
 
     // Update is called once per frame
@@ -72,5 +79,30 @@ public class EnemyShooting : MonoBehaviour
     {
         Instantiate(bullet, bulletPos.position, Quaternion.identity);
     }
+
+
+    public void TakeHit(float damage)
+    {
+        Hitpoints -= damage;
+        Healthbar.SetHealth(Hitpoints, MaxHitpoints);
+
+        if (Hitpoints <= 0)
+        {
+            audioPlayer.Play();
+            Destroy(gameObject);
+
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerProjectile")
+        {
+            Destroy(gameObject);
+
+            //SceneManager.LoadScene("Game Over");
+        }
+    }
+
 
 }

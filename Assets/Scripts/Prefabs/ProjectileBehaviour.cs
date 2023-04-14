@@ -14,7 +14,11 @@ public class ProjectileBehaviour : MonoBehaviour
         if (enemy){
             enemy.TakeHit(1);
         }
-
+        var enemy2 = collision.collider.GetComponent<EnemyShooting>();
+        if (enemy2)
+        {
+            enemy2.TakeHit(1);
+        }
 
         Destroy(gameObject);
     }
