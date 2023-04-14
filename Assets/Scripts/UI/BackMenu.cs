@@ -17,7 +17,7 @@ public class BackMenu : MonoBehaviour
 
     public void Quit()
     {
-        Quit();
+        Application.Quit();
     }
 
 }
