@@ -144,7 +144,7 @@ public class Player_Movement : MonoBehaviour
 
         if (rb.velocity != Vector2.zero)
         {
-            sfx.Play();
+            //sfx.Play();
             playerAnimator.SetFloat("xAxis", moveDirection.x);
             playerAnimator.SetFloat("yAxis", moveDirection.y);
         }
